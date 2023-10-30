@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --principal: rgb(50, 50, 184);
+    --secundario: #cabcbc;
+    --acento:  rgb(243, 133, 82);
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+section .title {
+    font-size: 2em;
+    text-align: center;
+    color:var(--acento);
+    margin: 30px 0;
+}

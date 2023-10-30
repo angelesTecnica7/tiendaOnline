@@ -1,0 +1,49 @@
+.card {
+    width: 100%;
+    max-width: 250px;
+    display: inline-block;
+    border: 2px solid  rgb(50, 50, 184);
+    margin: 10px;
+    text-align: center;
+    color:  rgb(50, 50, 184);
+
+}
+
+.card img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+}
+.card p {
+    margin: 10px 0;
+}
+.card .art {
+  font-size: 1.5em;
+
+}
+
+.card .cost {
+    font-size: 1.5em;
+    font-weight: bolder;
+    color: var(--acento);
+}
+
+.card .stock {
+    font-size: 1em;
+    color: var(--secundario);
+
+}
+
+.card a {
+    display: block;
+    width: 100%;
+    background:var(--principal);
+    color: var(--secundario);
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.card a:hover {
+    color: var(--acento);
+}

@@ -1,0 +1,47 @@
+.carrito {
+    width: 100%;
+    max-width: 400px;
+    background: beige;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+a.comprar {
+    display: block;
+    width: 100%;
+    background:var(--principal);
+    color: var(--secundario);
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+a.comprar:hover {
+    color: var(--acento);
+}
+
+.link {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+p.total {
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin: 15px 0;
+    text-align: center;
+}
+
+p.SubTotal {
+    font-size: 1em;
+    font-weight: bolder;
+    margin: 10px 0;
+    text-align: right;
+}
+
+p.eliminar {
+    text-align: right;
+}

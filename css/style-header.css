@@ -1,0 +1,47 @@
+header {
+    width: 100%;
+    padding: 20px;
+    color: var(--secundario);
+    background: var(--principal);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+
+}
+
+header a {
+    text-decoration: none;
+}
+
+header p {
+    font-size: 2.5em;
+}
+
+header i {
+    font-size: 1.5em;
+    padding: 0 10px;
+}
+
+header a {
+    color: var(--secundario);
+}
+
+header a:hover {
+    color: var(--acento);
+}
+
+@media screen and (max-width: 600px) {
+    
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .icons {
+        align-self: self-end;
+        margin-top: 15px;
+    }
+   
+}
