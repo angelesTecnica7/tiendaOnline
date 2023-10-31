@@ -16,6 +16,7 @@ require_once('includes/functionCart.php');
     <link rel="stylesheet" href="css/style-footer.css">
     <link rel="stylesheet" href="css/style-articles.css">
     <link rel="stylesheet" href="css/style-carrito.css">
+    <link rel="stylesheet" href="css/style-login.css">
    
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -28,24 +29,15 @@ require_once('includes/functionCart.php');
     <section>
   
     <p class="title">Carrito</p>
-    <div class="carrito">
-        <div class="producto">
-            <p class="eliminar"><i class="fa-solid fa-trash"></i></p>
-            <img src="" alt="">{Img_art}
-            <p>{Name_art}</p>
-            <p>Cantidad: - | 1 | +</p>
-            <p>Precio Unit: {Price_art}</p>
-            <p class="SubTotal">Sutotal: {Cantidad * Price_art}</p>
-            <hr>  
-        </div>
 
-        <p class="total">Total: {Suma subtotales}</p>
-        <a href="" class="comprar">Finalizar Compra</a>
-        <div class="link">
-        <a href="">Vaciar Carrito</a>
-        <a href="">Seguir Comprando</a>
-        </div>
-    </div>
+    <?php
+    if(isset($_SESSION['carrito'])){
+        mostrarCarrito();
+    }else {
+        echo '<div class="error">Carrito vacio</div>';
+    }
+    ?>
+    
     </section>
     <footer>
         <?php include('includes/footer.php'); ?>
