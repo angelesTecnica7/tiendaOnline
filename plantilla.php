@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('db/conexion.php');
-require_once('includes/funtionCar.php');
+require_once('includes/functionCart.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('db/conexion.php');
-require_once('includes/funtionCar.php');
+require_once('includes/functionCart.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,13 +23,10 @@ require_once('includes/funtionCar.php');
     </header>
     <section>
     <p class="title">Nuestros Productos</p>
-            <div class="card">
-                <img src="images/default_art.jpg" alt="">
-                <p class="art">{Nbr-prod}</p>
-                <p class="cost">$380 {Precio}</p>
-                <p class="stock">disponibilidad{Stock}: 4000</p>
-                <a href=""><i class="fa-solid fa-cart-plus"></i> Agregar</a>
-            </div>
+    <?php
+    mostrarProductos();
+    ?>
+            
     </section>
     <footer>
         <?php include('includes/footer.php'); ?>

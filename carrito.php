@@ -1,7 +1,10 @@
 <?php
 session_start();
 require_once('db/conexion.php');
-require_once('includes/funtionCar.php');
+require_once('includes/functionCart.php');
+?>
+<?php
+    if(isset($_SESSION['user'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +26,7 @@ require_once('includes/funtionCar.php');
        <?php include('includes/header.php'); ?>
     </header>
     <section>
+  
     <p class="title">Carrito</p>
     <div class="carrito">
         <div class="producto">
@@ -48,3 +52,8 @@ require_once('includes/funtionCar.php');
     </footer>
 </body>
 </html>
+<?php
+    }else{
+        header('location:login.php?senial=1');
+    }
+    ?>

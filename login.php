@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('db/conexion.php');
-require_once('includes/funtionCar.php');
+require_once('includes/functionCart.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +22,11 @@ require_once('includes/funtionCar.php');
        <?php include('includes/header.php'); ?>
     </header>
     <section>
+        <?php
+        if(isset($_GET['senial'])){
+            echo '<div class="error">Para ver el carrito debe ingresar al sistema</div>';
+        }
+        ?>
             <div class="contenedor">
             <form action="" method="post">
                 <label for="usuario">Usuario</label>
