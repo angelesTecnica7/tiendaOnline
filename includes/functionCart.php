@@ -9,7 +9,7 @@ function mostrarProductos(){
             <p class="art">'.$registro['Name_art'].'</p>
             <p class="cost">$'.number_format($registro['Price_art'],2,",",".").'</p>
             <p class="stock">disponibilidad: '.$registro['Stock_art'].'</p>
-            <a href=""><i class="fa-solid fa-cart-plus"></i> Agregar</a>
+            <a href="carrito.php?ID_prod='.$registro['ID_art'].'"><i class="fa-solid fa-cart-plus"></i> Agregar</a>
         </div>';
     };
 }
@@ -31,7 +31,7 @@ function mostrarCarrito(){
         <a href="" class="comprar">Finalizar Compra</a>
     <div class="link">
         <a href="">Vaciar Carrito</a>
-        <a href="">Seguir Comprando</a>
+        <a href="index.php">Seguir Comprando</a>
         </div>
     </div>';
 }

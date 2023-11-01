@@ -31,11 +31,36 @@ require_once('includes/functionCart.php');
     <p class="title">Carrito</p>
 
     <?php
-    if(isset($_SESSION['carrito'])){
-        mostrarCarrito();
-    }else {
-        echo '<div class="error">Carrito vacio</div>';
+    // if(isset($_SESSION['carrito'])){
+    //     if(isset($_GET['ID_prod'])){
+    //         echo 'Recuperar $_SSESION[carrito ] y Agregar producto nuevo producto';
+    //     }      
+    // }else{
+    //     if(isset($_GET['ID_prod'])){
+    //         echo 'Agregar primer producto';
+    //         mostrarCarrito();
+    //     }else{
+    //         echo '<div class="error">Carrito vacio
+    //         <a href="index.php">Ir a Tienda</a></div>';
+    //     }
+    // }
+
+    if(isset($_SESSION['carrito']) && isset($_GET['ID_prod'])){
+        echo 'Recuperar $_SESSION[carrito] y Agregar producto';
+        // agregarProducto();
+        // $_SESSION['carrito']=;
     }
+
+    if(!isset($_SESSION['carrito']) && isset($_GET['ID_prod'])){
+        echo 'Agregar primer producto y crear $_SESSION[carrito]';
+        // agregarPrimerProd();
+        mostrarCarrito();
+    }
+
+    if(!isset($_SESSION['carrito']) && !isset($_GET['ID_prod'])){
+        echo '<div class="error">Carrito vacio <a href="index.php">Ir a Tienda</a></div>';
+    }
+   
     ?>
     
     </section>
