@@ -24,7 +24,7 @@ require_once('includes/functionCart.php');
     <section>
         <?php
         if(isset($_GET['senial'])){
-            echo '<div class="error">Para ver el carrito debe ingresar al sistema</div>';
+            echo '<div class="error">Para utilizar el carrito debe ingresar al sistema</div>';
         }
         ?>
             <div class="contenedor">

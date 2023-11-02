@@ -17,8 +17,6 @@ require_once('includes/functionCart.php');
     <link rel="stylesheet" href="css/style-articles.css">
     <link rel="stylesheet" href="css/style-carrito.css">
     <link rel="stylesheet" href="css/style-login.css">
-   
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>tienda On-line</title>
 </head>
@@ -31,36 +29,15 @@ require_once('includes/functionCart.php');
     <p class="title">Carrito</p>
 
     <?php
-    // if(isset($_SESSION['carrito'])){
-    //     if(isset($_GET['ID_prod'])){
-    //         echo 'Recuperar $_SSESION[carrito ] y Agregar producto nuevo producto';
-    //     }      
-    // }else{
-    //     if(isset($_GET['ID_prod'])){
-    //         echo 'Agregar primer producto';
-    //         mostrarCarrito();
-    //     }else{
-    //         echo '<div class="error">Carrito vacio
-    //         <a href="index.php">Ir a Tienda</a></div>';
-    //     }
-    // }
-
-    if(isset($_SESSION['carrito']) && isset($_GET['ID_prod'])){
-        echo 'Recuperar $_SESSION[carrito] y Agregar producto';
-        // agregarProducto();
-        // $_SESSION['carrito']=;
+    if(isset($_GET['ID_prod'])){
+        // Agregar producto a carrito
+        agregarProdCarrito($_GET['ID_prod']);
     }
-
-    if(!isset($_SESSION['carrito']) && isset($_GET['ID_prod'])){
-        echo 'Agregar primer producto y crear $_SESSION[carrito]';
-        // agregarPrimerProd();
+    if(!isset($_SESSION['carrito'])){
+        mostrarCarritoVacio();
+    }else{
         mostrarCarrito();
     }
-
-    if(!isset($_SESSION['carrito']) && !isset($_GET['ID_prod'])){
-        echo '<div class="error">Carrito vacio <a href="index.php">Ir a Tienda</a></div>';
-    }
-   
     ?>
     
     </section>
