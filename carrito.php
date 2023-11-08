@@ -33,10 +33,31 @@ require_once('includes/functionCart.php');
         // Agregar producto a carrito
         agregarProdCarrito($_GET['ID_prod']);
     }
-    if(!isset($_SESSION['carrito'])){
-        mostrarCarritoVacio();
-    }else{
+   
+    if(isset($_GET['id_borrar'])){
+        borrarProdCarrito($_GET['id_borrar']);
+    }
+
+    if(isset($_GET['id_sumar'])){
+        sumarCantProd($_GET['id_sumar']);
+    }
+
+    if(isset($_GET['id_restar'])){
+        restarCantProd($_GET['id_restar']);
+    }
+
+    if(isset($_GET['vaciarCarrito'])){
+        vaciarCarrito();
+    }
+
+    if(isset($_GET['finCompra'])){
+        finalizarCompra();
+    }
+
+    if(isset($_SESSION['carrito'])){
         mostrarCarrito();
+    }else{
+        mostrarCarritoVacio();
     }
     ?>
     
