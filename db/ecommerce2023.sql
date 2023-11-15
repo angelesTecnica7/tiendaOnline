@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-10-2023 a las 19:00:02
+-- Tiempo de generación: 15-11-2023 a las 18:56:54
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.3
 
@@ -40,9 +40,34 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`ID_art`, `Name_art`, `Img_art`, `Price_art`, `Stock_art`) VALUES
-(1, 'Marcadores', 'marcadores.jpg', 1450, 45),
-(2, 'Lapiceras', 'lapiceras.jpg', 980, 20),
-(3, 'Cuaderno', 'cuadernos.jpg', 1550, 897);
+(1, 'Marcadores', 'marcadores.jpg', 1450, 40),
+(2, 'Lapiceras', 'lapiceras.jpg', 980, 5),
+(3, 'Cuadernos', 'cuadernos.jpg', 1550, 897);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `orders`
+--
+
+CREATE TABLE `orders` (
+  `ID_order` int(11) NOT NULL,
+  `Date_order` date NOT NULL,
+  `Articles` text COLLATE utf8_spanish_ci NOT NULL,
+  `ID_user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `orders`
+--
+
+INSERT INTO `orders` (`ID_order`, `Date_order`, `Articles`, `ID_user`) VALUES
+(1, '2023-11-14', ' 3/1550/5 1/1450/2', 1),
+(2, '2023-11-14', ' 2/980/3 3/1550/1', 2),
+(3, '2023-11-14', ' 3/1550/5', 1),
+(4, '2023-11-14', ' 1/1450/1 2/980/1 3/1550/1', 2),
+(5, '2023-11-14', ' 3/1550/7 2/980/3', 1),
+(6, '2023-11-14', ' 1/1450/5', 1);
 
 -- --------------------------------------------------------
 
@@ -75,6 +100,12 @@ ALTER TABLE `articles`
   ADD PRIMARY KEY (`ID_art`);
 
 --
+-- Indices de la tabla `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`ID_order`);
+
+--
 -- Indices de la tabla `users`
 --
 ALTER TABLE `users`
@@ -89,6 +120,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `articles`
   MODIFY `ID_art` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `ID_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
