@@ -29,6 +29,8 @@ require_once('includes/functionCart.php');
     <p class="title">Carrito</p>
 
     <?php
+   
+
     if(isset($_GET['ID_prod'])){
         // Agregar producto a carrito
         agregarProdCarrito($_GET['ID_prod']);

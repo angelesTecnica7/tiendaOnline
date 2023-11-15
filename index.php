@@ -23,8 +23,14 @@ require_once('includes/functionCart.php');
     </header>
     <section>
     <p class="title">Nuestros Productos</p>
+
+
     <?php
+        if(isset($_GET['finCompra'])){
+            finalizarCompra();
+        }
     mostrarProductos();
+   
     ?>
             
     </section>
